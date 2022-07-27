@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de multas</title>
+    <script>
+        function calcular(){
+            var txtvel = document.querySelector('.txtvel');
+            var res = document.getElementById('res');
+            var vel = Number(txtvel.value);
+            console.log('>> ',txtvel);
+            res.innerHTML = `<p>Sua velocidade atual é de ${vel}Km/hr</p>`;
+        }   
+    </script>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" class="txtvel" id="txtvel">
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+   
+</body>
+</html>
