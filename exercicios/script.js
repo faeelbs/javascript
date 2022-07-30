@@ -1,21 +1,14 @@
-function carregar() {
-    var msg = window.document.getElementById('msg');
-    var img = window.document.getElementById('imagem');
+
+function verificar() {
     var data = new Date();
-    var hora = data.getHours();
-    
-    msg.innerHTML = `Agora são ${hora} horas`
-        if (hora >= 0 && hora < 12){
-            // Bom dia
-            img.src = `manha.png`
-            document.body.style.background = `#e2cd9f`
-        } else if (hora >= 12 && hora <= 18){
-            // Boa tarde
-            img.src = `tarde.png`
-            document.body.style.background = `#b9846f`
-        } else {
-            // Boa noite
-            img.src = `noite.png`
-            document.body.style.background = `#515154`
-        }
+    var ano = data.getFullYear();
+    var fano = document.getElementById('txtano');
+    var res = document.querySelector('div#res');
+        if (fano.ariaValueMax.lenght == 0 || fano.value > ano) {
+            window.alert('[Erro} verifique os dados e tente novamente!');
+            } else {
+                var fsex = document.getElementsByName('radsex');
+                var idade = ano - Number(fano.value);
+                res.innerHTML = `Idade calculada: ${idade}`;
+            }
 }
